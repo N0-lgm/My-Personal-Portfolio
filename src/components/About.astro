@@ -1,0 +1,516 @@
+---
+// src/components/About.astro
+
+const stats = [
+  { number: "2+", label: "Years Experience", icon: "code" },
+  { number: "4+", label: "Projects Completed", icon: "rocket" },
+  { number: "100%", label: "Client Satisfaction", icon: "heart" },
+];
+
+const funFacts = [
+  { emoji: "☕", text: "Coffee powered" },
+  { emoji: "🌙", text: "Night owl coder" },
+  { emoji: "🎧", text: "Lo-fi beats" },
+  { emoji: "🌿", text: "Plant parent" },
+];
+---
+
+<section
+  id="about"
+  class="section-padding relative overflow-hidden bg-gradient-to-br from-surface via-white to-light"
+>
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute top-20 left-10 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl animate-pulse"
+      style="animation-delay: 1s;"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/3 w-64 h-64 bg-violet-200/20 rounded-full blur-3xl animate-float"
+    >
+    </div>
+  </div>
+
+  <!-- Floating decorative shapes -->
+  <div
+    class="absolute top-32 right-20 w-4 h-4 bg-accent rounded-full animate-bounce hidden lg:block"
+    style="animation-duration: 3s;"
+  >
+  </div>
+  <div
+    class="absolute bottom-40 left-20 w-6 h-6 border-2 border-secondary rounded-full animate-ping hidden lg:block"
+    style="animation-duration: 2s;"
+  >
+  </div>
+  <div
+    class="absolute top-1/3 right-1/4 w-3 h-3 bg-primary rotate-45 animate-spin hidden lg:block"
+    style="animation-duration: 10s;"
+  >
+  </div>
+
+  <div class="container-custom relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur rounded-full border border-surface mb-4 shadow-sm animate-fade-in-up"
+      >
+        <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+        <span class="text-sm font-medium text-secondary">Get to know me</span>
+      </div>
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 animate-fade-in-up"
+        style="animation-delay: 0.1s;"
+      >
+        About <span class="gradient-text">Me</span>
+      </h2>
+      <div
+        class="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full animate-scale-x"
+      >
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <!-- Left Column - Image & Stats -->
+      <div class="lg:col-span-5 relative">
+        <!-- Main Image Container -->
+        <div class="relative group">
+          <!-- Floating background shapes -->
+          <div
+            class="absolute -inset-4 bg-gradient-to-tr from-accent/20 to-secondary/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-60 group-hover:opacity-80"
+          >
+          </div>
+
+          <!-- Decorative rings -->
+          <div
+            class="absolute -top-6 -right-6 w-24 h-24 border-4 border-dashed border-accent/30 rounded-full animate-spin-slow"
+          >
+          </div>
+
+          <!-- Main Image -->
+          <div
+            class="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/10 transform group-hover:scale-[1.02] transition-transform duration-500"
+          >
+            <img
+              src="/images/dev1.jpg"
+              alt="Nassiba Chen"
+              class="w-full aspect-[4/5] object-cover"
+            />
+
+            <!-- Overlay gradient -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            >
+            </div>
+
+            <!-- Floating badge on image -->
+            <div
+              class="absolute bottom-4 left-4 right-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+            >
+              <div
+                class="bg-white/95 backdrop-blur rounded-xl p-3 shadow-lg border border-surface"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-gradient-to-br from-accent to-secondary rounded-full flex items-center justify-center text-white text-lg"
+                  >
+                    👋
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold text-primary">
+                      Hi, I'm Nassiba!
+                    </p>
+                    <p class="text-xs text-secondary">Frontend Developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-3 gap-4 mt-8">
+          {
+            stats.map((stat, index) => (
+              <div
+                class="group relative bg-white rounded-2xl p-4 shadow-lg border border-surface hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-default overflow-hidden"
+                style={`animation-delay: ${index * 0.1}s`}
+              >
+                <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div class="relative z-10 text-center">
+                  <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-surface flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    {stat.icon === "code" && (
+                      <svg
+                        class="w-5 h-5 text-secondary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                        />
+                      </svg>
+                    )}
+                    {stat.icon === "rocket" && (
+                      <svg
+                        class="w-5 h-5 text-secondary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 10V3L4 14h7v7l9-11h-7z"
+                        />
+                      </svg>
+                    )}
+                    {stat.icon === "heart" && (
+                      <svg
+                        class="w-5 h-5 text-secondary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                        />
+                      </svg>
+                    )}
+                  </div>
+                  <div class="text-2xl font-bold text-primary group-hover:text-secondary transition-colors">
+                    {stat.number}
+                  </div>
+                  <div class="text-xs text-secondary font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Right Column - Content -->
+      <div class="lg:col-span-7 space-y-8">
+        <!-- Bio Cards -->
+        <div class="space-y-6">
+          <!-- Card 1 -->
+          <div
+            class="group relative bg-white rounded-3xl p-8 shadow-lg border border-surface hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent/10 to-secondary/10 rounded-full blur-2xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"
+            >
+            </div>
+
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white shadow-lg group-hover:rotate-12 transition-transform duration-300"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="#000"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary">My Journey</h3>
+              </div>
+
+              <p class="text-primary/70 leading-relaxed text-lg">
+                I discovered my passion for coding while studying design in
+                university. What started as curiosity about how websites work
+                evolved into a career building
+                <span class="relative inline-block">
+                  <span class="relative z-10 font-semibold text-secondary"
+                    >accessible</span
+                  >
+                  <span
+                    class="absolute bottom-1 left-0 w-full h-2 bg-accent/20 -z-0"
+                  ></span>
+                </span>
+                and
+                <span class="relative inline-block">
+                  <span class="relative z-10 font-semibold text-secondary"
+                    >performant</span
+                  >
+                  <span
+                    class="absolute bottom-1 left-0 w-full h-2 bg-accent/20 -z-0"
+                  ></span>
+                </span>
+                web applications. I believe great software should be both beautiful
+                and functional.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group relative bg-white rounded-3xl p-8 shadow-lg border border-surface hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+          >
+            <div
+              class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-secondary/10 to-accent/10 rounded-full blur-2xl -ml-16 -mb-16 group-hover:scale-150 transition-transform duration-700"
+            >
+            </div>
+
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-white shadow-lg group-hover:-rotate-12 transition-transform duration-300"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="#000"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary">What I Do</h3>
+              </div>
+
+              <p class="text-primary/70 leading-relaxed text-lg mb-4">
+                I specialize in building responsive, interactive web experiences
+                using modern technologies. My focus is on creating
+                <span class="text-secondary font-semibold">pixel-perfect</span> interfaces
+                with
+                <span class="text-secondary font-semibold"
+                  >smooth animations</span
+                > that delight users.
+              </p>
+
+              <div class="flex flex-wrap gap-2">
+                {
+                  [
+                    "Frontend Architecture",
+                    "Design Systems",
+                    "Performance",
+                    "Accessibility",
+                  ].map((tag, i) => (
+                    <span class="px-3 py-1 bg-surface text-secondary text-sm rounded-full font-medium hover:bg-secondary hover:text-white transition-colors duration-300 cursor-default">
+                      {tag}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 - Fun Facts -->
+          <div
+            class="group relative bg-gradient-to-r from-secondary to-secondary rounded-3xl p-8 shadow-xl overflow-hidden text-white"
+          >
+            <div
+              class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-30"
+            >
+            </div>
+
+            <div class="relative z-10 ">
+              <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                <span>When I'm not coding</span>
+                <span class="animate-bounce">✨</span>
+              </h3>
+
+              <div class="grid grid-cols-2 gap-4">
+                {
+                  funFacts.map((fact, index) => (
+                    <div
+                      class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl p-3 hover:bg-white/20 transition-colors duration-300 cursor-default group/item"
+                      style={`animation-delay: ${index * 0.1}s`}
+                    >
+                      <span class="text-2xl group-hover/item:scale-125 transition-transform duration-300">
+                        {fact.emoji}
+                      </span>
+                      <span class="text-sm font-medium">{fact.text}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a
+            href="#contact"
+            class="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-secondary transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/20 font-semibold"
+          >
+            Let's work together
+            <svg
+              class="w-5 h-5 transition-transform group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary/20 text-primary rounded-full hover:border-secondary hover:text-secondary transition-all duration-300 font-semibold group"
+          >
+            Download CV
+            <svg
+              class="w-5 h-5 transition-transform group-hover:translate-y-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(135deg, #059669 0%, #0891b2 50%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-x {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-scale-x {
+    animation: scale-x 0.8s ease-out forwards;
+    transform-origin: center;
+  }
+
+  /* Hover underline effect */
+  .hover-underline {
+    position: relative;
+  }
+
+  .hover-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #059669, #0891b2);
+    transition: width 0.3s ease;
+  }
+
+  .hover-underline:hover::after {
+    width: 100%;
+  }
+</style>

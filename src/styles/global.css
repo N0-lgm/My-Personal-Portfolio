@@ -1,0 +1,112 @@
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: #064e3b;
+    --color-secondary: #059669;
+    --color-accent: #10b981;
+    --color-light: #d1fae5;
+    --color-surface: #f0fdf4;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply antialiased bg-white;
+        color: var(--color-primary);
+    }
+
+    ::selection {
+        background-color: rgba(16, 185, 129, 0.3);
+        color: var(--color-primary);
+    }
+}
+
+@layer components {
+    .section-padding {
+        @apply px-6 py-20 md:px-12 lg:px-24 lg:py-32;
+    }
+
+    .container-custom {
+        @apply max-w-6xl mx-auto;
+    }
+
+    .text-primary {
+        color: var(--color-primary);
+    }
+
+    .text-secondary {
+        color: var(--color-secondary);
+    }
+
+    .text-accent {
+        color: var(--color-accent);
+    }
+
+    .bg-primary {
+        background-color: var(--color-primary);
+    }
+
+    .bg-secondary {
+        background-color: var(--color-secondary);
+    }
+
+    .bg-accent {
+        background-color: var(--color-accent);
+    }
+
+    .bg-surface {
+        background-color: var(--color-surface);
+    }
+
+    .bg-light {
+        background-color: var(--color-light);
+    }
+
+    .border-surface {
+        border-color: var(--color-surface);
+    }
+
+    .from-surface {
+        --tw-gradient-from: var(--color-surface);
+    }
+
+    .to-light {
+        --tw-gradient-to: var(--color-light);
+    }
+
+    .hover\:text-primary:hover {
+        color: var(--color-primary);
+    }
+
+    .hover\:text-secondary:hover {
+        color: var(--color-secondary);
+    }
+
+    .hover\:text-accent:hover {
+        color: var(--color-accent);
+    }
+
+    .hover\:bg-primary:hover {
+        background-color: var(--color-primary);
+    }
+
+    .hover\:bg-secondary:hover {
+        background-color: var(--color-secondary);
+    }
+
+    .hover\:bg-accent:hover {
+        background-color: var(--color-accent);
+    }
+
+    .hover\:border-secondary:hover {
+        border-color: var(--color-secondary);
+    }
+}

@@ -1,0 +1,27 @@
+---
+// src/layouts/Layout.astro
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Junior Frontend Developer Portfolio" } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <slot />
+  </head>
+
+  <body class="font-sans">
+    <slot />
+  </body>
+</html>

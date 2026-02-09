@@ -1,0 +1,25 @@
+---
+// src/components/Footer.astro
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-8 border-t border-surface bg-surface">
+  <div class="container-custom px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-primary/60">
+        © {currentYear} Nassiba Chen. Built with <span class="text-secondary"
+          >Astro</span
+        > & <span class="text-secondary">Tailwind</span>.
+      </p>
+      <div class="flex gap-6 text-sm text-primary/60">
+        <a href="#" class="hover:text-secondary transition-colors font-medium"
+          >Download Resume</a
+        >
+        <a href="#" class="hover:text-secondary transition-colors font-medium"
+          >Colophon</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>

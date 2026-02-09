@@ -1,0 +1,227 @@
+---
+// src/components/Hero.astro
+---
+
+<section
+  class="section-padding pt-32 lg:pt-40 bg-gradient-to-br from-surface via-white to-light overflow-hidden"
+>
+  <div class="container-custom relative">
+    <!-- Background decorative blobs -->
+    <div
+      class="absolute top-20 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10 animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl -z-10"
+    >
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-center min-h-[70vh]">
+      <!-- Text Content - Spans 7 columns -->
+      <div class="lg:col-span-7 order-2 lg:order-1 relative z-10">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur rounded-full border border-surface mb-6 shadow-sm"
+        >
+          <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+          <span class="text-sm font-medium text-secondary"
+            >Available for work</span
+          >
+        </div>
+
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
+        >
+          <span class="block text-primary">Creative</span>
+          <span class="block gradient-text">Developer</span>
+          <span
+            class="block text-primary/80 text-4xl md:text-5xl lg:text-6xl mt-2"
+            >& Designer</span
+          >
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-primary/60 max-w-lg mb-8 leading-relaxed"
+        >
+          I craft digital experiences that blend clean code with intuitive
+          design. Focused on creating accessible, performant web applications.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-12">
+          <a
+            href="#projects"
+            class="group px-8 py-4 bg-primary text-white rounded-full hover:bg-secondary transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20 flex items-center gap-2"
+          >
+            View Work
+            <svg
+              class="w-4 h-4 transition-transform group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+          <a
+            href="#contact"
+            class="px-8 py-4 border-2 border-secondary/30 text-secondary rounded-full hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300"
+          >
+            Contact Me
+          </a>
+        </div>
+
+        <!-- Tech stack floating pills -->
+        <div class="flex flex-wrap gap-3 relative">
+          {
+            ["React", "TypeScript", "Astro", "Tailwind"].map((tech, i) => (
+              <span
+                class="px-4 py-2 bg-white/90 backdrop-blur shadow-sm border border-surface text-secondary text-sm rounded-full font-medium hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                style={`animation-delay: ${i * 100}ms`}
+              >
+                {tech}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Image Area - Spans 5 columns with free-form layout -->
+      <div class="lg:col-span-5 order-1 lg:order-2 relative">
+        <div class="relative w-full h-[500px] md:h-[600px]">
+          <!-- Main Image - Organic shape with clip-path -->
+          <div class="absolute top-0 right-0 w-[90%] h-[80%] z-20 group">
+            <div
+              class="relative w-full h-full overflow-hidden rounded-[40%_60%_70%_30%/40%_50%_60%_50%] shadow-2xl shadow-primary/10 transition-all duration-500 hover:rounded-[60%_40%_30%_70%/60%_30%_70%_40%]"
+            >
+              <img
+                src="/images/dev1.jpg"
+                alt="Nassiba Chen - Frontend Developer"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <!-- Subtle overlay gradient -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating card 1 - Experience -->
+          <div
+            class="absolute top-10 -left-4 md:left-0 z-30 bg-white p-4 rounded-2xl shadow-xl border border-surface max-w-[180px] transform -rotate-6 hover:rotate-0 transition-transform duration-300"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-accent to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg"
+              >
+                2+
+              </div>
+              <div>
+                <span
+                  class="block text-xs text-primary/60 uppercase tracking-wider"
+                  >Experience</span
+                >
+                <span class="block text-sm font-bold text-primary">+2Years</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating card 2 - Projects -->
+          <div
+            class="absolute bottom-32 -right-4 md:right-0 z-30 bg-white p-4 rounded-2xl shadow-xl border border-surface max-w-[180px] transform rotate-3 hover:rotate-0 transition-transform duration-300"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <span
+                  class="block text-xs text-primary/60 uppercase tracking-wider"
+                  >Completed</span
+                >
+                <span class="block text-sm font-bold text-primary"
+                  >4+ Projects</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom scroll indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-secondary/60 text-sm animate-bounce"
+    >
+      <span class="uppercase tracking-widest text-xs">Scroll</span>
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(-6deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(-6deg);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(3deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(3deg);
+    }
+  }
+
+  /* Apply floating animation to cards */
+  .absolute.transform {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .absolute.transform.rotate-3 {
+    animation: float-delayed 6s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+</style>
